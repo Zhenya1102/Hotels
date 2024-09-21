@@ -1,0 +1,44 @@
+.logo {
+    font-family: 'Prata', sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 1.08px;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 20px;
+    }
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    font-family: 'ArialBoldMT', sans-serif;
+    color: #222;
+    text-align: center;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.96px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background: #FFF;
+    padding: 32px 50px;
+    transition: all 0.3s ease 0s;
+}
+
+@media (max-width: 768px) {
+    .button {
+        min-width: 100%;
+        font-size: 16px;
+        padding: 20px 50px;
+    }
+}
+
+.button:hover {
+    background-color: #D5C9BE;
+}
+
+.button:active {
+    background: rgba(255, 255, 255, 0.5);
+}
