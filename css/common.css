@@ -11,6 +11,26 @@
     }
 }
 
+@media (hover: hover) {
+.logo:hover {
+    animation: 1.5s ease-in-out infinite running shake;
+}
+    @keyframes shake {
+
+        0%, 50%, 100% {
+            transform: rotate(0deg);
+        }
+
+        10%, 30% {
+            transform: rotate(-5deg);
+        }
+
+        20%, 40% {
+            transform: rotate(5deg);
+        }
+    }
+}
+
 .button {
     display: inline-flex;
     justify-content: center;
