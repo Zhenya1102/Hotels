@@ -293,6 +293,22 @@
     left: 0;
     width: 58px;
     height: 47px;
+    animation: 5s ease infinite running shake;
+}
+
+@keyframes shake {
+
+    0%, 50%, 100% {
+        transform: rotate(0deg);
+    }
+
+    10%, 30% {
+        transform: rotate(-6deg);
+    }
+
+    20%, 40% {
+        transform: rotate(6deg);
+    }
 }
 
 .about__button {
@@ -550,4 +566,10 @@
     .footer__label  {
       order: 3;
     }
+}
+
+.developer {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #D5C9BE;
 }

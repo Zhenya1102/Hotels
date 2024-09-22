@@ -47,7 +47,7 @@ header.addEventListener('click', checkMenuState);
 
 // Take into account the height of the header when scrolling to the necessary blocks.
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('.menu__link').forEach(anchor => {
+    document.querySelectorAll('.menu__link, .button-anchor').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 

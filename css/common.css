@@ -13,9 +13,10 @@
 }
 
 @media (hover: hover) {
-.logo:hover {
-    animation: 1.5s ease-in-out infinite running shake;
-}
+    .logo:hover {
+        animation: 1.5s ease-in-out infinite running shake;
+    }
+
     @keyframes shake {
 
         0%, 50%, 100% {
