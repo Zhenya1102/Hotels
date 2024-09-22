@@ -1,4 +1,4 @@
-// Добавляет класс scrolled к элементу header при прокрутке страницы более чем на 50 пикселей.
+// Add the class "scrolled" to the header element when scrolling more than 50 pixels on the page.
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -9,37 +9,31 @@ function scrollFunction() {
     }
 }
 
+// Add the class "open" to the header element when the burger menu is opened.
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("burger").addEventListener("click", function (){
-        document.querySelector("header").classList.toggle("open")
-    })
-})
+        document.querySelector("header").classList.toggle("open");
+    });
 
-//
-// const header = document.querySelector('header');
-// const body = document.querySelector('body');
-//
-// if (header.classList.contains('open')) {
-//     body.classList.add('lock');
-// } else {
-//     body.classList.remove('lock');
-// }
+    document.querySelectorAll(".menu__link").forEach(function(link) {
+        link.addEventListener("click", function() {
+            document.querySelector("header").classList.remove("open");
+        });
+    });
+});
 
-// Найти элементы header и body
+// Add the class "lock" to the body element to disable scrolling.
 const header = document.querySelector('header');
 const body = document.querySelector('body');
 
-// Функция для добавления класса .lock к body
 function addLockClass() {
     body.classList.add('lock');
 }
 
-// Функция для удаления класса .lock из body
 function removeLockClass() {
     body.classList.remove('lock');
 }
 
-// Проверить, открыто ли меню (header с классом open)
 function checkMenuState() {
     if (header.classList.contains('open')) {
         addLockClass();
@@ -48,6 +42,26 @@ function checkMenuState() {
     }
 }
 
-// Вызвать функцию проверки состояния меню при загрузке страницы и при изменении класса header
 document.addEventListener('DOMContentLoaded', checkMenuState);
 header.addEventListener('click', checkMenuState);
+
+// Take into account the height of the header when scrolling to the necessary blocks.
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.menu__link').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                const headerHeight = document.getElementById('header').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                });
+            }
+        });
+    });
+});

@@ -3,6 +3,7 @@
     font-size: 36px;
     line-height: 150%;
     letter-spacing: 1.08px;
+    z-index: 100;
 }
 
 @media (max-width: 768px) {
@@ -22,11 +23,11 @@
         }
 
         10%, 30% {
-            transform: rotate(-5deg);
+            transform: rotate(-2deg);
         }
 
         20%, 40% {
-            transform: rotate(5deg);
+            transform: rotate(2deg);
         }
     }
 }
